@@ -10,17 +10,17 @@ Tool parts that I chose: Part 1 (Selenium IDE) and Part 4 (Cypress)
 - Step 0.4, locator of Excluded tools: `select` (CSS, the only select on the page), finds 1
 - Step 0.4, locator of Must be vegetarian: `#default-checkbox` (CSS, by id), finds 1
 - Step 0.4, locator of Custom Pizza Name: `input#pizza-name` (CSS, tag and id), finds 1. After Pizza, Please! the answer heading also has id pizza-name, so `#pizza-name` alone finds 2
-- Step 0.5, pizza name, tool and calories of the run by hand:
+- Step 0.5, pizza name, tool and calories of the run by hand: Lab Pizza 20261123-0100, tool Scissors, 500 calories per slice (dough Thick, 6 ingredients)
 
 | Step | Actual result | Pass or fail |
 |------|---------------|--------------|
-| 1    |               |              |
-| 2    |               |              |
-| 3    |               |              |
-| 4    |               |              |
-| 5    |               |              |
-| 6    |               |              |
-| 7    |               |              |
+| 1    | Heading reads Looking to break out of your pizza routine? | Pass |
+| 2    | Max Calories per Slice, Excluded tools, Must be vegetarian and Custom Pizza Name appeared | Pass |
+| 3    | Fields show 600, Knife selected, vegetarian ticked, Lab Pizza 20261123-0100 (replaced the default 1000) | Pass |
+| 4    | Answer shows Name: Lab Pizza 20261123-0100, Tool: Scissors (not Knife), Calories per slice: 500 (600 or fewer). The answer appeared a moment after the click | Pass |
+| 5    | Page says Please log in first. | Pass |
+| 6    | Signed in as admin/admin (boxes were already filled), page shows Latest pizza recommendations | Pass |
+| 7    | Line "Lab Pizza 20261123-0100 (tool=Scissors, ingredients_number=6)", same tool as step 4. It was 3rd in the list, not newest, because other users' pizzas arrived after it | Pass |
 
 ## Part 1: Selenium IDE
 
