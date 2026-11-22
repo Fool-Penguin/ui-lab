@@ -34,7 +34,7 @@ Tool parts that I chose: Part 1 (Selenium IDE) and Part 4 (Cypress)
   - Also added the test QP-01 customer to the Default Suite, so that selenium-side-runner plays it.
 - Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo: run 1 `Lab Pizza 20261123-013628`, run 2 `Lab Pizza 20261123-013711`
 - Step 1.6, the line Tests: of both runs: run 1 `Tests: 2 passed, 2 total` (QP-01 customer 4990 ms), run 2 `Tests: 2 passed, 2 total` (QP-01 customer 4846 ms)
-- Step 1.7, one line of QP01customerTest.java that needs rewriting, and why:
+- Step 1.7, one line of QP01customerTest.java that needs rewriting, and why: line 66, `driver.findElement(By.xpath("//label[normalize-space()='Max Calories per Slice']/../input")).sendKeys("600");`. selenium-side-runner clears a box before it types, but WebDriver's `sendKeys` only adds keys, and the page fills this box with 1000, so the box would hold 1000600. It needs a `.clear()` before `sendKeys("600")`. Lines 91 and 98 are wrong too: the export put `vars.get("pizzaName").toString()` inside the quotes, so line 91 does not compile (unescaped quotes) and line 98 compares the page with the literal text `Name: vars.get("pizzaName").toString()` instead of the pizza name. Both should be `is("Name: " + vars.get("pizzaName").toString())` (and `is(vars.get("pizzaName").toString())` on line 91).
 
 ## Part 4: Cypress
 
