@@ -1,1 +1,0 @@
-Google Chrome: 157.0.8103.79 (Official Build) (64-bit) (cohort: Stable) 
