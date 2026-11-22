@@ -25,7 +25,7 @@ Tool parts that I chose: Part 1 (Selenium IDE) and Part 4 (Cypress)
 ## Part 1: Selenium IDE
 
 - Firefox version and Node.js version: Firefox 160.0.1 (64-bit), Node.js v24.14.1 (npm 11.11.0), Selenium IDE 3.17.4
-- Step 1.4, the line of the failed check and the line Tests:
+- Step 1.4, the line of the failed check and the line Tests: `Actual value 'Received!' did not match 'Received' during assertText:id=message:Received`, `Tests: 1 failed, 1 total`
 - Step 1.5, target chosen for Submit, and why the recorded one was fragile:
 - Step 1.6, commands changed, added or deleted after recording:
 - Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo:
