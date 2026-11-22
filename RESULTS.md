@@ -38,7 +38,7 @@ Tool parts that I chose: Part 1 (Selenium IDE) and Part 4 (Cypress)
 
 ## Part 4: Cypress
 
-- node --version, npm --version and npx cypress version:
+- node --version, npm --version and npx cypress version: Node.js v24.14.1, npm 11.11.0, Cypress package 16.2.1 and binary 16.2.1 (Electron 41.7.0, bundled Node 24.15.0). Browsers found: Chrome 157.0.8103.79, Edge 158.0.4370.33, Firefox 160.0.1
 - Step 4.3, failure message for the wrong title:
 - Step 4.6, tool and calories in the answer of POST /api/pizza:
 - Step 4.7, the line of the admin list that shows your pizza:
