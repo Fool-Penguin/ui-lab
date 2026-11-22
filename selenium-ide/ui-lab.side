@@ -10,7 +10,7 @@
       "id": "d96158c7-eaf1-46bb-84e1-39e74af2ba1f",
       "comment": "",
       "command": "open",
-      "target": "/selenium/web/web-form.html",
+      "target": "https://www.selenium.dev/selenium/web/web-form.html",
       "targets": [],
       "value": ""
     }, {
@@ -57,7 +57,7 @@
       "id": "e91f149b-765e-4c24-ae6f-8a609b69de65",
       "comment": "",
       "command": "click",
-      "target": "css=.btn",
+      "target": "xpath=//button[@type='submit']",
       "targets": [
         ["css=.btn", "css:finder"],
         ["xpath=//button[@type='submit']", "xpath:attributes"],

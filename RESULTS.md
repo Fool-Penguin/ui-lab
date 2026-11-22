@@ -26,7 +26,7 @@ Tool parts that I chose: Part 1 (Selenium IDE) and Part 4 (Cypress)
 
 - Firefox version and Node.js version: Firefox 160.0.1 (64-bit), Node.js v24.14.1 (npm 11.11.0), Selenium IDE 3.17.4
 - Step 1.4, the line of the failed check and the line Tests: `Actual value 'Received!' did not match 'Received' during assertText:id=message:Received`, `Tests: 1 failed, 1 total`
-- Step 1.5, target chosen for Submit, and why the recorded one was fragile:
+- Step 1.5, target chosen for Submit, and why the recorded one was fragile: `xpath=//button[@type='submit']`. The recorded `css=.btn` uses a style class that any button can share, and it finds the first element with that class, so a new button above Submit would make the test click the wrong one. `type='submit'` says what the button does, so it keeps working when the layout, colours or text change. Run after the change: `Tests: 1 passed, 1 total`
 - Step 1.6, commands changed, added or deleted after recording:
 - Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo:
 - Step 1.6, the line Tests: of both runs:
