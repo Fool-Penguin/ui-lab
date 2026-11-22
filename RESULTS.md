@@ -27,9 +27,13 @@ Tool parts that I chose: Part 1 (Selenium IDE) and Part 4 (Cypress)
 - Firefox version and Node.js version: Firefox 160.0.1 (64-bit), Node.js v24.14.1 (npm 11.11.0), Selenium IDE 3.17.4
 - Step 1.4, the line of the failed check and the line Tests: `Actual value 'Received!' did not match 'Received' during assertText:id=message:Received`, `Tests: 1 failed, 1 total`
 - Step 1.5, target chosen for Submit, and why the recorded one was fragile: `xpath=//button[@type='submit']`. The recorded `css=.btn` uses a style class that any button can share, and it finds the first element with that class, so a new button above Submit would make the test click the wrong one. `type='submit'` says what the button does, so it keeps working when the layout, colours or text change. Run after the change: `Tests: 1 passed, 1 total`
-- Step 1.6, commands changed, added or deleted after recording:
-- Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo:
-- Step 1.6, the line Tests: of both runs:
+- Step 1.6, commands changed, added or deleted after recording (the recording had 18 commands, the finished test has 29):
+  - Changed: `open /` to the full address `https://quickpizza.grafana.com/`; the Advanced click `css=.float-right` to `xpath=//label[.//span[normalize-space()='Advanced']]`; `type id=floating_filled 600` to the label-based target `xpath=//label[normalize-space()='Max Calories per Slice']/../input` (three boxes share that id); `addSelection css=.ml-4` to `css=select`; `type id=pizza-name Lab Pizza test` to `css=input#pizza-name` with `${pizzaName}`.
+  - Deleted: `setWindowSize 550x691`; the stray click `css=.w-9`; five clicks and one double-click on the label `css=.relative:nth-child(1) > .absolute`; `click id=pizza-name` before typing; `mouseOver` and `mouseOut` on Pizza, Please!.
+  - Added: waits for the heading, the four advanced fields, the Knife option, the answer and the rate message (`wait for element visible` / `wait for element present`, 10000 ms); `execute script` + `echo` that build and print the pizza name with the date and time; the checks `assert text` (heading, Name:, rate message), `assert value` (600, pizza name), `assert selected label` (Knife), `assert checked` (vegetarian), `assert not text` (Tool: Knife), and `store text` + `execute script` + `assert` for calories of 600 or fewer.
+  - Also added the test QP-01 customer to the Default Suite, so that selenium-side-runner plays it.
+- Step 1.6, the pizza names of run 1 and run 2, from the lines info: echo: run 1 `Lab Pizza 20261123-013628`, run 2 `Lab Pizza 20261123-013711`
+- Step 1.6, the line Tests: of both runs: run 1 `Tests: 2 passed, 2 total` (QP-01 customer 4990 ms), run 2 `Tests: 2 passed, 2 total` (QP-01 customer 4846 ms)
 - Step 1.7, one line of QP01customerTest.java that needs rewriting, and why:
 
 ## Part 4: Cypress
