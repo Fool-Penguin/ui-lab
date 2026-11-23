@@ -42,7 +42,7 @@ Tool parts that I chose: Part 1 (Selenium IDE) and Part 4 (Cypress)
 - Step 4.3, failure message for the wrong title: `Timed out retrying after 10000ms`, `+ expected - actual`, `-'Web form'`, `+'Web Form'` (at web-form.cy.js:6:15, after 12 seconds, with the screenshot `Web form -- fills in the fields and sends the form (failed).png`)
 - Step 4.6, tool and calories in the answer of POST /api/pizza: tool Scissors, calories 325 (status 200; the request carried maxCaloriesPerSlice 600, and the page showed the same tool and calories)
 - Step 4.7, the line of the admin list that shows your pizza: `Lab Pizza 20261123-155350 (tool=Scissors, ingredients_number=5) (newest)`
-- Step 4.8, run 1, result, duration and pizza name:
+- Step 4.8, run 1, result, duration and pizza name: All specs passed, 2 of 2 tests (pizza-scenario.cy.js 00:08, web-form.cy.js 00:02, total 00:11), `Lab Pizza 20261123-155522` (tool=Pizza cutter, newest in the admin list)
 - Step 4.8, run 2, result, duration and pizza name:
 - Step 4.9 (optional), browser and result:
 
